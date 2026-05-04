@@ -8,6 +8,7 @@ This is an e-commerce data utilities project that provides query functions for a
 
 ## Database Schema
 
+
 The SQLite database contains tables for a complete e-commerce system including:
 
 - customers, addresses, customer_segments, customer_activity_log
