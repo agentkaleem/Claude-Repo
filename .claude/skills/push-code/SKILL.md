@@ -76,7 +76,14 @@ git status
 
 ### 7. Write Commit Message
 
-Format: `RB-{Ticket-Number} | {Imperative description}`
+**Strict format:** `RB-{Ticket-Number} | {Imperative description}`
+
+The message MUST satisfy all of:
+
+1. Prefix is uppercase `RB` followed by a hyphen `-` and the ticket number — e.g., `RB-421`. Never `Rb`, `rb`, `RB ` (space), or `RB421`.
+2. A single space, then a pipe `|`, then a single space — exactly `|`. Not `:`, `-`, `—`, or `||`.
+3. A non-empty imperative description after the pipe — at least 3 words, starting with a verb (Add / Fix / Refactor / Remove / Update / etc.). Never commit with just the ticket ID and no description.
+4. No trailing period, no lowercase first word in the description.
 
 **Good examples:**
 
@@ -86,11 +93,18 @@ RB-5678 | Fix cart total calculation for bundled products
 RB-9012 | Refactor image processing to use cache
 ```
 
-**Do NOT (too vague):**
+**Do NOT — these are all rejected:**
 
 ```
-RB-1234 | Work on trader pricing
+Rb 421                              # lowercase + space instead of hyphen
+RB-421                              # missing description entirely
+RB-421 |                            # empty description
+RB-421 | Work on trader pricing     # vague, not an imperative action
+RB-421: Add trader pricing          # wrong separator (colon instead of pipe)
+rb-421 | Add trader pricing         # lowercase prefix
 ```
+
+Before running `git commit`, re-read your message and check it against rules 1–4 above. If any rule fails, rewrite the message — do not commit.
 
 ### 8. Create Commit
 
