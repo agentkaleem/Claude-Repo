@@ -42,7 +42,7 @@ git branch
 git status
 ```
 
-Expected: On branch `RB-XXXX`, tracking `origin/main`.
+Expected: On branch `RB-{Ticket-Number}`. A freshly created branch will track `origin/main` (from Step 3); an existing branch that was previously pushed will track its own remote (`origin/RB-{Ticket-Number}`). Either is fine — confirm the branch name is correct and the working tree is in the expected state.
 
 ### 5. Show Changed Files
 
@@ -57,7 +57,7 @@ Ask user: "Which files to stage?" Prefer naming files explicitly.
 Prefer named files:
 
 ```bash
-git add file1.php file2.phtml
+git add src/queries/order_queries.ts scripts/init-claude.js
 ```
 
 Use blanket staging only when the working tree is clean of generated/sensitive files:
@@ -110,7 +110,7 @@ git log --oneline -1
 git push origin RB-{Ticket-Number}
 ```
 
-Expected: Branch pushed to Bitbucket.
+Expected: Branch pushed to GitHub.
 
 ### 10. Verify Push
 
@@ -131,14 +131,16 @@ The `[origin/RB-1234]` marker confirms the branch is tracking the remote. If it 
 
 ## Quick Command Sequence
 
+Substitute `RB-{Ticket-Number}` with the actual ticket ID and update the commit message before running.
+
 ```bash
 git fetch origin
 git branch
-git checkout RB-1234 2>/dev/null || git checkout -b RB-1234 origin/main
+git checkout RB-{Ticket-Number} 2>/dev/null || git checkout -b RB-{Ticket-Number} origin/main
 git status
-git add file1.php file2.phtml   # or `git add .` if working tree is clean
+git add src/queries/order_queries.ts scripts/init-claude.js   # or `git add .` if working tree is clean
 git status
-git commit -m "RB-1234 | Add trader pricing display"
-git push origin RB-1234
+git commit -m "RB-{Ticket-Number} | {Imperative description}"
+git push origin RB-{Ticket-Number}
 git branch -vv
 ```
