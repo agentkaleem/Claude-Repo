@@ -1,13 +1,13 @@
 ---
 name: push-code
-description: "Push code with commit messages. Use when the user wants to commit and push code. Handles branch creation from main, file staging, professional commit messages (RB-XXXX format), and remote push with verification."
+description: "Push code with commit messages. Use when the user wants to push code or commit and push. Handles branch creation from main, file staging, professional commit messages (RB-XXXX format), and remote push with verification."
 ---
 
 # Push Code Skill
 
 ## Purpose
 
-Guide developers through the git workflow to safely push code to git with professional commit messages.
+Git workflow to safely push code to git with professional commit messages.
 
 ---
 
