@@ -33,7 +33,7 @@ try {
   if (error.code === "ENOENT") {
     console.error(`❌ Error: Could not find ${templatePath}`);
     console.error(
-      "   Make sure you run this script from the project root directory."
+      "   Make sure you run this script from the project root directory.",
     );
   } else if (error instanceof SyntaxError) {
     console.error("❌ Error: Invalid JSON after processing");
