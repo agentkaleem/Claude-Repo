@@ -35,6 +35,8 @@ git checkout RB-{Ticket-Number} 2>/dev/null || git checkout -b RB-{Ticket-Number
 
 **New branches must be created from `origin/main`, not current HEAD.**
 
+This step depends on Step 1 (`git fetch origin`) having run first. If you skip Step 1, `origin/main` may be stale and the new branch will be based on outdated code.
+
 ### 4. Verify Branch
 
 ```bash

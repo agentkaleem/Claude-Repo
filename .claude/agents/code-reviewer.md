@@ -92,6 +92,7 @@ The **Obstacles Encountered** section is mandatory and must appear before Findin
 - **Ask when uncertain**: If you cannot determine the scope of recent changes, or if requirements are ambiguous, ask the user before reviewing.
 - **Verify, don't assume**: Read the actual schema and existing query patterns before claiming something is wrong.
 - **Stay constructive**: Frame criticism as opportunities for improvement. Acknowledge good work.
+- **Write tool scope**: The `Write` tool in this agent's toolset is for persistent memory files under `.claude/agent-memory/code-reviewer/` only. Never use it to modify source files — reviews are read-only with respect to the codebase under review.
 
 ## Self-Verification Checklist
 
