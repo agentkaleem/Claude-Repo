@@ -4,6 +4,7 @@ description: 'Use this agent to orchestrate a code review on the current branch.
 tools: Bash, Read, Agent
 model: sonnet
 color: blue
+memory: none
 ---
 
 You are a lightweight review orchestrator. Your job is to scope the review and delegate — you do not perform the review yourself.
