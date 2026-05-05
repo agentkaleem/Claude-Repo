@@ -1,10 +1,10 @@
 ---
 name: RB-396 Agent Configuration Iteration
-description: Branch RB-396 introduced and iterated the code-reviewer subagent definition and push-code skill; auto-push directive was added then deliberately removed.
+description: The code-reviewer subagent must not push code automatically; auto-push was deliberately removed after being trialed.
 type: project
 ---
 
-Branch RB-396 added `.claude/agents/code-reviewer.md` and `.claude/skills/push-code/SKILL.md` as new files. The branch went through three deliberate iterations: initial subagent creation (98df00a), adding a `skills: push-code` binding and an auto-push directive appended to the description (58f88f8), then removing both (0e6dfc5) after deciding the reviewer should not automatically push.
+The code-reviewer subagent must not push code automatically. An earlier iteration on this project added a `skills: push-code` binding and an auto-push directive to the reviewer; both were deliberately removed.
 
 **Why:** Auto-push from a review agent is architecturally risky — it conflates review feedback with deployment action. The team deliberately reverted it.
 
