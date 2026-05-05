@@ -57,7 +57,7 @@ Ask user: "Which files to stage?" Prefer naming files explicitly.
 Prefer named files:
 
 ```bash
-git add file1.php file2.phtml
+git add src/queries/order_queries.ts scripts/init-claude.js
 ```
 
 Use blanket staging only when the working tree is clean of generated/sensitive files:
@@ -110,7 +110,7 @@ git log --oneline -1
 git push origin RB-{Ticket-Number}
 ```
 
-Expected: Branch pushed to Bitbucket.
+Expected: Branch pushed to GitHub.
 
 ### 10. Verify Push
 
@@ -138,7 +138,7 @@ git fetch origin
 git branch
 git checkout RB-{Ticket-Number} 2>/dev/null || git checkout -b RB-{Ticket-Number} origin/main
 git status
-git add file1.php file2.phtml   # or `git add .` if working tree is clean
+git add src/queries/order_queries.ts scripts/init-claude.js   # or `git add .` if working tree is clean
 git status
 git commit -m "RB-{Ticket-Number} | {Imperative description}"
 git push origin RB-{Ticket-Number}
